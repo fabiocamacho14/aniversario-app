@@ -3,16 +3,22 @@ package com.fabio.aniversario.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "aniversario")
+@Table(name = "ANIVERSARIO")
 public class Aniversario extends EntidadeBaseInteger {
 
-    @Column(length = 100, nullable = false)
-    private String nome;
+    @Column(name = "DATA_ANIVERSARIO", nullable = false)
+    private LocalDate dataAniversario;
+
+//    Relacionamentos
+
+    @OneToOne(optional = false, fetch = FetchType.EAGER)
+    @MapsId
+    @JoinColumn(name = "ID_PESSOA", nullable = false, foreignKey = @ForeignKey(name = "FK_ANIVERSARIO_PESSOA"))
+    private Pessoa pessoa;
 }

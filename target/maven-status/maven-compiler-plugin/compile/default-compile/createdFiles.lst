@@ -1,2 +1,5 @@
+com\fabio\aniversario\model\Pessoa.class
 com\fabio\aniversario\model\Aniversario.class
+com\fabio\aniversario\model\NivelImportancia.class
 com\fabio\aniversario\model\EntidadeBaseInteger.class
+com\fabio\aniversario\model\GrupoSocial.class
